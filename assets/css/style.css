@@ -1,0 +1,190 @@
+:root{
+    --header-color: #000;
+    --h1-color:#393c41;
+    --h2-color: #6e7378;
+}
+
+@font-face{
+    font-family: GothamRegular;
+    src: url(../fonts/GothamBookRegular.otf);
+
+}
+@font-face{
+    font-family: GothamMedium;
+    src: url(../fonts/GothamMedium.otf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'GothamMedium', Helvetica,Arial ;
+    font-size: 14px;
+}
+/* HEADER*/
+header{
+    display: flex;
+    justify-content:space-between;
+    height: 50px;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+header li{
+    list-style: none;
+}
+header a{
+    text-decoration: none;
+    color: var(--header-color);
+}
+
+header .logo{
+    width: 120px;
+    margin-left: 20px;
+}
+header .middle ul,
+header .rightside ul{
+    display: flex;
+    
+}
+header .middle li,
+header .rightside li{
+    margin:0 10px;
+    text-transform: uppercase;  
+    display: inline-block;  
+}
+
+/*MAIN*/
+
+main{
+    background-image: url(../images/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+main .info{
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+main h1{
+    font-size: 50px;
+    font-weight: normal;
+    color: var(--h1-color);
+}
+main h3{
+    font-weight: normal;
+    font-family: 'GothamRegular', Helvetica, Arial;
+    color: var(--h2-color);
+}
+main h3 a{
+    color: var(--h1-color);
+}
+/*FOOTER*/
+
+footer{
+    position: fixed;
+    bottom: 30px;
+    left: 0;
+    right: 0;  
+}
+@keyframes botao{
+    0%{
+        margin-bottom: 40px;
+    }
+    50%{
+        margin-bottom: 20px;
+    }
+    100%{
+        margin-bottom: 0;
+    }
+}
+footer .botao{
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    animation-name: botao;
+    animation-duration: 5s;
+    animation-delay: 0.9s;
+    animation-iteration-count: 1;
+}
+
+footer .botao1,
+footer .botao2{
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    width: 220px;
+    height: 43px;
+    padding: 15px;
+    border-radius: 30px;
+    text-align: center;
+    font-family: 'GothamRegular';
+    text-transform: uppercase; 
+    font-size: 12px;
+    margin: 0 10px;
+    
+}
+footer a{
+    text-decoration: none;
+}
+footer .botao2{
+    background-color: rgba(255, 255, 255, 0.62);
+    color: var(--h1-color);
+}
+footer .seta{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    height: 30px;
+    
+}
+@keyframes seta{
+    0% {
+        margin-top:0px;
+    }
+    50%{
+        margin-top: 15px;
+    }
+    100%{
+        margin-top: 0px;
+    }
+}
+footer .img-seta{
+    height: 15px;
+    animation-name: seta;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+/*Media quieres*/
+
+@media(max-width:1200px){
+    header .middle{
+        display: none;
+    }
+    header .rightside li {
+        display: none;
+    }
+    header .rightside li:nth-child(3){
+        display: block;
+        background-color:#6e737831;
+        padding: 8px;
+        border-radius: 10px;
+
+    }
+}
+
+@media(max-width:600px){
+    footer .botao{
+        flex-direction: column;
+        align-items: center;
+    }
+    footer .botao a{
+        margin: 10px 10px;
+        width: calc(100vw - 60px);
+    }
+}
